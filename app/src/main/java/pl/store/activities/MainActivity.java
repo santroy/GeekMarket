@@ -1,4 +1,4 @@
-package pl.store.geekmarket;
+package pl.store.activities;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import pl.store.R;
 
 public class MainActivity extends AppCompatActivity {
 

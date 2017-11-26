@@ -7,6 +7,9 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import pl.store.model.Product;
 
 /**
@@ -81,12 +84,12 @@ public class DatabaseManager {
 
     }
 
-    public String getData() {
+    public ArrayList<Product> getData() {
+        ArrayList<Product> products = new ArrayList<Product>();
+
         String [] columns = new String [] {ID, PRODUCT_NAME, PRODUCT_DESC, PRODUCT_PRICE, PRODUCT_CATEGORY};
 
-        Cursor c = db.query(DATABASE_TABLE, columns, null, null, null, null,null);
-
-        String result = "";
+        Cursor c = db.query(DATABASE_TABLE, columns, null, null, null, null,null, null);
 
         int iRowID = c.getColumnIndex(ID);
         int iName = c.getColumnIndex(PRODUCT_NAME);
@@ -95,13 +98,40 @@ public class DatabaseManager {
         int iCategory = c.getColumnIndex(PRODUCT_CATEGORY);
 
         for(c.moveToFirst();!c.isAfterLast();c.moveToNext()) {
-            result = result + String.format("\n ID: %s NAME: %s DESC: %s PRICE: %s CATEGORY: %s", c.getString(iRowID), c.getString(iName), c.getString(iDesc), c.getString(iPrice), c.getString(iCategory));
+
+            Product product = new Product();
+
+            product.setId(c.getInt(iRowID));
+            product.setProductName(c.getString(iName));
+            product.setProductDesc(c.getString(iDesc));
+            product.setProductPrice(c.getDouble(iPrice));
+            product.setProductCategory(c.getString(iCategory));
+
+            products.add(product);
         }
 
         c.close();
 
-        return result;
+        return products;
 
+    }
 
+    public Product getItem(int id) {
+
+        String [] columns = new String [] {ID, PRODUCT_NAME, PRODUCT_DESC, PRODUCT_PRICE, PRODUCT_CATEGORY};
+        Cursor c = db.query(DATABASE_TABLE, columns, ID + "=?", new String[] { String.valueOf(id) }, null, null, null,null );
+        Product item = new Product();
+
+        if(c!=null) {
+            c.moveToFirst();
+        }
+
+        item.setProductName(c.getString(1));
+        item.setId(c.getInt(0));
+        item.setProductDesc(c.getString(2));
+        item.setProductCategory(c.getString(4));
+        item.setProductPrice(c.getDouble(3));
+
+        return item;
     }
 }

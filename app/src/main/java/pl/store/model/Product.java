@@ -59,4 +59,9 @@ public class Product {
         this.productPrice = productPrice;
         this.productCategory = productCategory;
     }
+
+    @Override
+    public String toString() {
+        return productName;
+    }
 }

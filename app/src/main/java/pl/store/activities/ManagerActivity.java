@@ -1,4 +1,4 @@
-package pl.store.geekmarket;
+package pl.store.activities;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import pl.store.R;
 
 public class ManagerActivity extends AppCompatActivity {
 
@@ -29,7 +31,7 @@ public class ManagerActivity extends AppCompatActivity {
         addProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ManagerActivity.this, pl.store.geekmarket.AddProductActivity.class);
+                Intent intent = new Intent(ManagerActivity.this, AddProductActivity.class);
                 startActivity(intent);
             }
         });
@@ -37,7 +39,7 @@ public class ManagerActivity extends AppCompatActivity {
         editProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ManagerActivity.this, pl.store.geekmarket.EditProductActivity.class);
+                Intent intent = new Intent(ManagerActivity.this, EditProductActivity.class);
                 startActivity(intent);
             }
         });

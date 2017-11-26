@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context="pl.store.geekmarket.EditProductActivity">
+    tools:context="pl.store.activities.EditProductActivity">
 
     <TextView
         android:id="@+id/productID"

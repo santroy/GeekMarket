@@ -1,4 +1,4 @@
-package pl.store.geekmarket;
+package pl.store.activities;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import pl.store.R;
 
 public class EditProductActivity extends AppCompatActivity {
 

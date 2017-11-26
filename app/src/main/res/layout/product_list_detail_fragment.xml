@@ -1,52 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context="pl.store.geekmarket.pl.store.activities.ManagerActivity">
+    android:orientation="vertical"
+    tools:context="pl.store.fragments.ProductListDetailFragment">
+
+    <!-- TODO: Update blank fragment layout -->
 
     <TextView
-        android:id="@+id/managerDescription"
+        android:id="@+id/idResultField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="15dp"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="@string/manager_desc"
-        android:textSize="14sp" />
+        android:layout_marginTop="15dp" />
 
-    <Button
-        android:id="@+id/addProductButton"
+    <TextView
+        android:id="@+id/nameResultField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="15dp"
-        android:background="@color/colorAccent"
-        android:text="@string/manager_add_button" />
+        android:layout_marginTop="15dp" />
 
-    <Button
-        android:id="@+id/editProductButton"
+    <TextView
+        android:id="@+id/descResultField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:background="@color/colorAccent"
-        android:text="@string/manager_delete_button" />
+        android:layout_marginTop="15dp" />
 
-    <Button
+    <TextView
+        android:id="@+id/priceResultField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:background="@color/colorAccent"
-        android:text="@string/manager_update_button" />
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/categoryResultField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp" />
 
 </LinearLayout>

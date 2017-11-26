@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context="pl.store.geekmarket.AddProductActivity">
+    tools:context="pl.store.activities.AddProductActivity">
 
     <Spinner
         android:id="@+id/categorySpinner"

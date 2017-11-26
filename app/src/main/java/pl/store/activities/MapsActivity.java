@@ -1,6 +1,5 @@
-package pl.store.geekmarket;
+package pl.store.activities;
 
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -9,11 +8,12 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import pl.store.R;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -54,9 +54,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         mMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.mipmap.geek_market_logo)).anchor(0.0f,1.0f).title("GeekMarket").position(GEEKMARKET_CENTER)).showInfoWindow();
-        CameraPosition cameraPosistion = new CameraPosition.Builder().target(GEEKMARKET_CENTER).zoom(15).bearing(0).tilt(30).build();
+        CameraPosition cameraPosition = new CameraPosition.Builder().target(GEEKMARKET_CENTER).zoom(15).bearing(0).tilt(30).build();
 
-        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosistion));
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
     }
 }

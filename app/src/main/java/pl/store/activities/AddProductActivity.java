@@ -1,4 +1,4 @@
-package pl.store.geekmarket;
+package pl.store.activities;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.widget.Toast;
 import java.sql.SQLException;
 
 import pl.store.database.DatabaseManager;
+import pl.store.R;
 import pl.store.model.Product;
 
 public class AddProductActivity extends AppCompatActivity {

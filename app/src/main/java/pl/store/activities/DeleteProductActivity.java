@@ -1,7 +1,9 @@
-package pl.store.geekmarket;
+package pl.store.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import pl.store.R;
 
 public class DeleteProductActivity extends AppCompatActivity {
 
