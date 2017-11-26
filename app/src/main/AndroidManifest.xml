@@ -35,14 +35,30 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps">
-
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
-
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
+        <activity android:name=".ManagerActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".AddProductActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ManagerActivity" />
+        </activity>
+        <activity android:name=".ProductListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ManagerActivity" />
+        </activity>
+        <activity android:name=".EditProductActivity" />
+        <activity android:name=".DeleteProductActivity"></activity>
     </application>
 
 </manifest>

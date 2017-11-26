@@ -1,4 +1,26 @@
 <resources>
     <string name="app_name">GeekMarket</string>
     <string name="title_activity_maps">Map</string>
+
+
+    //Manager
+    <string name="manager_desc">Witaj w panelu zarządzania produktami GeekMarket! Proszę, wybierz dostępne opcje...</string>
+    <string name="manager_add_button">DODAJ PRODUKT</string>
+    <string name="manager_delete_button">EDYTUJ PRODUKT</string>
+    <string name="manager_update_button">USUŃ PRODUKT</string>
+
+
+    //AddProductManager
+    <string name="add_field_name_hint">nazwa produktu</string>
+    <string name="add_field_price_hint">cena produktu</string>
+    <string name="add_field_desc_hint">opis produktu</string>
+    <string name="add_field_submit">DODAJ PRODUKT</string>
+    <string-array name="add_field_category">
+        <item>Figurka</item>
+        <item>Odzież</item>
+        <item>Gadżet</item>
+        <item>Komiks</item>
+    </string-array>
+
+
 </resources>

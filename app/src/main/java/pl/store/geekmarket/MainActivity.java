@@ -38,10 +38,12 @@ public class MainActivity extends AppCompatActivity {
         switch(item.getItemId()) {
             case R.id.products:
                 Toast.makeText(this, "Clicked Products!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, ProductListActivity.class));
                 break;
 
             case R.id.manager:
                 Toast.makeText(this, "Clicked Manager!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, ManagerActivity.class));
                 break;
 
             case R.id.map:

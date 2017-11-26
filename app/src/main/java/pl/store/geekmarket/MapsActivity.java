@@ -53,7 +53,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.mipmap.geek_market_logo)).anchor(0.0f,1.0f).title("GeekMarket").position(GEEKMARKET_CENTER));
+        mMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.mipmap.geek_market_logo)).anchor(0.0f,1.0f).title("GeekMarket").position(GEEKMARKET_CENTER)).showInfoWindow();
         CameraPosition cameraPosistion = new CameraPosition.Builder().target(GEEKMARKET_CENTER).zoom(15).bearing(0).tilt(30).build();
 
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosistion));
