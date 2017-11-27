@@ -1,5 +1,6 @@
 package pl.store.activities;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,7 +36,7 @@ public class AddProductActivity extends AppCompatActivity {
 
         etProductName = (EditText) findViewById(R.id.etProductName);
         etProductPrice = (EditText) findViewById(R.id.etProductPrice);
-        etProductDesc = (EditText) findViewById(R.id.etProductPrice);
+        etProductDesc = (EditText) findViewById(R.id.etProductDesc);
         categorySpinner = (Spinner) findViewById(R.id.categorySpinner);
         btnAddProduct = (Button) findViewById(R.id.btnAddProduct);
 
@@ -43,20 +44,31 @@ public class AddProductActivity extends AppCompatActivity {
     }
 
     public void btnSubmit(View v) {
-        Product product = new Product();
-        product.setProductName(etProductName.getText().toString().trim());
-        product.setProductDesc(etProductDesc.getText().toString().trim());
-        product.setProductPrice(Double.parseDouble(etProductPrice.getText().toString().trim()));
-        product.setProductCategory(categorySpinner.getSelectedItem().toString().trim());
 
-        try {
-            DatabaseManager db = new DatabaseManager(this);
-            db.open();
-            db.createEntry(product);
-            db.close();
-            Toast.makeText(this, "Success!", Toast.LENGTH_SHORT).show();
-        } catch(Exception e) {
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        if(etProductName.getText().length() > 0 && etProductPrice.length() > 0 && etProductDesc.length() > 0) {
+            Product product = new Product();
+            product.setProductName(etProductName.getText().toString().trim());
+            product.setProductDesc(etProductDesc.getText().toString().trim());
+            product.setProductPrice(Double.parseDouble(etProductPrice.getText().toString().trim()));
+            product.setProductCategory(categorySpinner.getSelectedItem().toString().trim());
+
+            try {
+                DatabaseManager db = new DatabaseManager(this);
+                db.open();
+                db.createEntry(product);
+                db.close();
+                Toast.makeText(this, "Dodano produkt!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(AddProductActivity.this, ManagerActivity.class);
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+
+            } catch(Exception e) {
+                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(this, "Uzupełnij wszystkie pola!", Toast.LENGTH_SHORT).show();
         }
 
     }
