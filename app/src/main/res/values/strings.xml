@@ -2,6 +2,9 @@
     <string name="app_name">GeekMarket</string>
     <string name="title_activity_maps">Map</string>
 
+    //Main
+    <string name="welcome_desc">Witaj w naszym markecie! \n GeekMarket jest miejscem gdzie każdy Geek znajdzie coś dla siebie. \n\n Dzięki tej aplikacji można zarządzać asortymentem katalogowym sklepu."</string>
+    <string name="month_theme">Obecny temat miesiąca to: </string>
 
     //Manager
     <string name="manager_desc">Witaj w panelu zarządzania produktami GeekMarket! Proszę, wybierz dostępne opcje...</string>
@@ -21,9 +24,6 @@
         <item>Gadżet</item>
         <item>Komiks</item>
     </string-array>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

@@ -19,7 +19,7 @@ public class ManagerActivity extends AppCompatActivity {
         setContentView(R.layout.manager_activity);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(" GeekMarket - Manager ");
+        actionBar.setTitle(" Manager ");
         actionBar.setIcon(R.mipmap.geek_market_logo);
         actionBar.setDisplayUseLogoEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);

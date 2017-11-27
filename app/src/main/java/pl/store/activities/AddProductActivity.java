@@ -27,7 +27,7 @@ public class AddProductActivity extends AppCompatActivity {
         setContentView(R.layout.add_product_activity);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(" GeekMarket - Dodaj produkt ");
+        actionBar.setTitle(" Dodaj produkt ");
         actionBar.setIcon(R.mipmap.geek_market_logo);
         actionBar.setDisplayUseLogoEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);

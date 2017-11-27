@@ -38,7 +38,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:background="@color/colorAccent"
-        android:text="@string/manager_delete_button" />
+        android:text="@string/manager_update_button" />
 
     <Button
         android:id="@+id/deleteProductButton"
@@ -48,6 +48,6 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:background="@color/colorAccent"
-        android:text="@string/manager_update_button" />
+        android:text="@string/manager_delete_button" />
 
 </LinearLayout>

@@ -1,7 +1,9 @@
 package pl.store.activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,7 +27,7 @@ public class DeleteProductActivity extends AppCompatActivity {
         setContentView(R.layout.delete_product_activity);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(" GeekMarket - Usuń produkt ");
+        actionBar.setTitle(" Usuń produkt ");
         actionBar.setIcon(R.mipmap.geek_market_logo);
         actionBar.setDisplayUseLogoEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
@@ -36,6 +38,8 @@ public class DeleteProductActivity extends AppCompatActivity {
         try {
 
             final DatabaseManager db = new DatabaseManager(this);
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
             db.open();
             ArrayList<Product> products =  db.getData();
             db.close();
@@ -44,17 +48,34 @@ public class DeleteProductActivity extends AppCompatActivity {
 
             deleteProductViewList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Product itemToDelete = (Product) deleteProductViewList.getItemAtPosition(position);
-                    db.open();
-                    db.deleteItem(itemToDelete.getId());
-                    db.close();
+                    final int pos = position;
+                    builder.setCancelable(true);
+                    builder.setTitle("Potwierdź wybór");
+                    builder.setMessage("Czy na pewno chcesz usunąć ten produkt?");
+                    builder.setPositiveButton("Tak",
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Product itemToDelete = (Product) deleteProductViewList.getItemAtPosition(pos);
+                                    db.open();
+                                    db.deleteItem(itemToDelete.getId());
+                                    db.close();
+                                    Toast.makeText(DeleteProductActivity.this, "Usunięto!", Toast.LENGTH_SHORT).show();
+                                    Intent intent = getIntent();
+                                    finish();
+                                    overridePendingTransition(0, 0);
+                                    startActivity(intent);
+                                    overridePendingTransition(0, 0);
+                                }
+                            });
+                    builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
 
-                    Toast.makeText(DeleteProductActivity.this, "Usunięto!", Toast.LENGTH_SHORT).show();
-                    Intent intent = getIntent();
-                    finish();
-                    overridePendingTransition(0, 0);
-                    startActivity(intent);
-                    overridePendingTransition(0, 0);
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
 
                 }
             });

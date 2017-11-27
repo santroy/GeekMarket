@@ -26,7 +26,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         setContentView(R.layout.maps_activity);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(" GeekMarket - Map ");
+        actionBar.setTitle(" Mapa ");
         actionBar.setIcon(R.mipmap.geek_market_logo);
         actionBar.setDisplayUseLogoEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);

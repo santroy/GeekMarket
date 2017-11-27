@@ -39,7 +39,7 @@ public class ProductListActivity extends AppCompatActivity implements ProductLis
         }
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(" GeekMarket - Lista produktów ");
+        actionBar.setTitle(" Lista produktów ");
         actionBar.setIcon(R.mipmap.geek_market_logo);
         actionBar.setDisplayUseLogoEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
