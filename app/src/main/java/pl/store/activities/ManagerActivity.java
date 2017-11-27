@@ -11,7 +11,7 @@ import pl.store.R;
 
 public class ManagerActivity extends AppCompatActivity {
 
-    Button addProductButton, editProductButton;
+    Button addProductButton, editProductButton, deleteProductButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,7 @@ public class ManagerActivity extends AppCompatActivity {
 
         addProductButton = (Button) findViewById(R.id.addProductButton);
         editProductButton = (Button) findViewById(R.id.editProductButton);
+        deleteProductButton = (Button) findViewById(R.id.deleteProductButton);
 
         addProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +41,14 @@ public class ManagerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ManagerActivity.this, EditProductActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        deleteProductButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ManagerActivity.this, DeleteProductActivity.class);
                 startActivity(intent);
             }
         });

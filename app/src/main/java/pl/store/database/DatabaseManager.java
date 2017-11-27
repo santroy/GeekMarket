@@ -134,4 +134,8 @@ public class DatabaseManager {
 
         return item;
     }
+
+    public long deleteItem(int id) {
+        return db.delete(DATABASE_TABLE, ID + "=?", new String[] { String.valueOf(id) }) ;
+    }
 }

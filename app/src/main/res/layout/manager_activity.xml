@@ -41,6 +41,7 @@
         android:text="@string/manager_delete_button" />
 
     <Button
+        android:id="@+id/deleteProductButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
