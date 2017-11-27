@@ -24,7 +24,7 @@
      You need a different API key for each encryption key, including the release key that is used to
      sign the APK for publishing.
      You can define the keys for the debug and release targets in src/debug/ and src/release/.
--->
+        -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
@@ -36,7 +36,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".activities.ManagerActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -52,17 +51,27 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="pl.store.activities.ManagerActivity" />
         </activity>
-        <activity android:name=".activities.EditProductActivity" />
+        <activity android:name=".activities.EditProductActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pl.store.activities.EditProductListActivity" />
+        </activity>
         <activity android:name=".activities.DeleteProductActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="pl.store.activities.ManagerActivity" /></activity>
+                android:value="pl.store.activities.ManagerActivity" />
+        </activity>
         <activity
             android:name=".activities.MapsActivity"
             android:label="@string/title_activity_maps">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="pl.store.activities.MainActivity" />
+        </activity>
+        <activity android:name=".activities.EditProductListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="pl.store.activities.ManagerActivity" />
         </activity>
     </application>
 

@@ -138,4 +138,14 @@ public class DatabaseManager {
     public long deleteItem(int id) {
         return db.delete(DATABASE_TABLE, ID + "=?", new String[] { String.valueOf(id) }) ;
     }
+
+    public long updateItem(Product product) {
+        ContentValues cv = new ContentValues();
+        cv.put(PRODUCT_NAME, product.getProductName());
+        cv.put(PRODUCT_DESC, product.getProductDesc());
+        cv.put(PRODUCT_PRICE, product.getProductPrice());
+        cv.put(PRODUCT_CATEGORY, product.getProductCategory());
+
+        return db.update(DATABASE_TABLE, cv, ID + "=?", new String[] { String.valueOf(product.getId())});
+    }
 }

@@ -40,7 +40,7 @@ public class ManagerActivity extends AppCompatActivity {
         editProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ManagerActivity.this, EditProductActivity.class);
+                Intent intent = new Intent(ManagerActivity.this, EditProductListActivity.class);
                 startActivity(intent);
             }
         });

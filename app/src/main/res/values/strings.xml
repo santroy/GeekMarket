@@ -6,8 +6,8 @@
     //Manager
     <string name="manager_desc">Witaj w panelu zarządzania produktami GeekMarket! Proszę, wybierz dostępne opcje...</string>
     <string name="manager_add_button">DODAJ PRODUKT</string>
-    <string name="manager_delete_button">EDYTUJ PRODUKT</string>
-    <string name="manager_update_button">USUŃ PRODUKT</string>
+    <string name="manager_delete_button">USUŃ PRODUKT</string>
+    <string name="manager_update_button">EDYTUJ PRODUKT</string>
 
 
     //AddProductManager
