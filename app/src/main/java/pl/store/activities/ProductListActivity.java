@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -86,6 +87,12 @@ public class ProductListActivity extends AppCompatActivity implements ProductLis
             descResultField.setText("Opis: " + itemSelected.getProductDesc());
             priceResultField.setText("Cena: " + itemSelected.getProductPrice().toString());
             categoryResultField.setText("Kategoria:  " + itemSelected.getProductCategory());
+
+            idResultField.setVisibility(View.VISIBLE);
+            nameResultField.setVisibility(View.VISIBLE);
+            descResultField.setVisibility(View.VISIBLE);
+            priceResultField.setVisibility(View.VISIBLE);
+            categoryResultField.setVisibility(View.VISIBLE);
 
 
         } catch (Exception e) {

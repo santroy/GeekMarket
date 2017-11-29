@@ -8,6 +8,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/idResultField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,6 +23,7 @@
         android:paddingTop="5dp" />
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/nameResultField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,6 +37,7 @@
         android:paddingTop="5dp" />
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/descResultField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,6 +51,7 @@
         android:paddingTop="5dp" />
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/priceResultField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -61,6 +65,7 @@
         android:paddingTop="5dp" />
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/categoryResultField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
